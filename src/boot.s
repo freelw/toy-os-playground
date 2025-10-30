@@ -2,7 +2,17 @@
 ORG 07c00h
 SYSSEG equ 01000h
 SYSLEN equ 72
-jmp 07c0h:(load_system-$)
+jmp 07c0h:(load_hd_info-$)
+
+load_hd_info:
+    mov ax, 0x0000
+    mov ds, ax
+    mov es, ax
+    lds si, [4*0x41]  ;取中断向量 0x41 的值，即 hd0 参数表的地址ds:si
+    mov di, hd_info
+    mov cx, 0x10
+    rep
+    movsb
 
 load_system:
     mov dx, 00000h
@@ -73,6 +83,16 @@ gdt:
 gdt_48:
     dw 0x7ff                ;2048/8=256个描述符
     dw gdt, 0        ;基地址是从0x7c00开始的gdt位置
+
+hd_info:
+   dw 0
+   dw 0
+   dw 0
+   dw 0
+   dw 0
+   dw 0
+   dw 0
+   dw 0 
 
 ;----------注意！所有的有效语句要写在这之前，并且总长出小于等于510字节----------
     times 510 - ($-$$) db 0

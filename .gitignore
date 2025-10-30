@@ -4,3 +4,6 @@ a.vfd
 demos/common_header_demo/fs_patch_tool/package-lock.json
 # ignore all object files
 **/*.o
+**/*.bin
+**/*.lst
+**/*.img
