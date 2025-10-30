@@ -15,6 +15,8 @@ load_hd_info:
     movsb
 
 load_system:
+    mov ax, 0x0000
+    mov ds, ax ; lds指令修改了ds 需要复原
     mov dx, 00000h
     mov cx, 00002h
     mov ax, SYSSEG
