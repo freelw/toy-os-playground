@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build", // 任务的显示名称
+            "type": "shell",             // 任务类型，执行 shell 命令
+            "command": "./make_os.sh", // 要执行的命令或脚本路径
+            "group": "build",            // 可选：将任务归类，方便运行
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "options": {
+                // 将当前工作目录设置为项目根目录下的 'src' 文件夹
+                "cwd": "${workspaceFolder}" 
+            }
+        }
+    ]
+}
