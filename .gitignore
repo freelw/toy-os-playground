@@ -7,3 +7,4 @@ demos/common_header_demo/fs_patch_tool/package-lock.json
 **/*.bin
 **/*.lst
 **/*.img
+**/lan_os
