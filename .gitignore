@@ -8,3 +8,4 @@ demos/common_header_demo/fs_patch_tool/package-lock.json
 **/*.lst
 **/*.img
 **/lan_os
+src/common/lib/liblansys.a
