@@ -9,6 +9,7 @@
             "miDebuggerServerAddress": "",
             "miDebuggerPath": "/usr/bin/gdb-multiarch",
             "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Start QEMU Debug Server",
             "setupCommands": [
                 {
                     "description": "Set disassembly flavor",
