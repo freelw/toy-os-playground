@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug QEMU Bootloader (16-bit)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/bin/ls",
+            "miDebuggerServerAddress": "",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch",
+            "cwd": "${workspaceFolder}",
+            "setupCommands": [
+                {
+                    "description": "Set disassembly flavor",
+                    "text": "set disassembly-flavor intel",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set architecture to i386:x86-64",
+                    "text": "set architecture i386:x86-64",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Connect to remote target",
+                    "text": "target remote localhost:1234",
+                    "ignoreFailures": false
+                },
+                {
+                    "description": "Set breakpoint at 0x7c00",
+                    "text": "b *0x7c00",
+                    "ignoreFailures": false
+                }
+            ],
+            "stopAtEntry": false,
+            "externalConsole": false,
+            "MIMode": "gdb"
+        }
+    ]
+}
+
