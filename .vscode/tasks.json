@@ -6,6 +6,7 @@
             "type": "shell",
             "command": "make",
             "group": "build",
+            "dependsOn": ["clean"],
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
@@ -32,6 +33,7 @@
             "type": "shell",
             "command": "./start_qemu_vnc_dbg.sh",
             "isBackground": true,
+            "dependsOn": ["build"],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
