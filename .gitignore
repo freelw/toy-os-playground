@@ -18,3 +18,4 @@ src/bin/ls/ls
 src/bin/shell/lan_sh
 src/bin/test/test
 **/test_elf
+src/root_fs/lan_sh

@@ -26,10 +26,10 @@ bins:
 	$(MAKE) -C bin/ls
 	$(MAKE) -C bin/shell
 	$(MAKE) -C bin/test
-	$(MAKE) -C bin/loop/cp
-	$(MAKE) -C bin/ls/cp
-	$(MAKE) -C bin/shell/cp
-	$(MAKE) -C bin/test/cp
+	$(MAKE) -C bin/loop cp
+	$(MAKE) -C bin/ls cp
+	$(MAKE) -C bin/shell cp
+	$(MAKE) -C bin/test cp
 bins_clean:
 	$(MAKE) -C bin/loop clean
 	$(MAKE) -C bin/ls clean
