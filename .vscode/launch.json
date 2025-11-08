@@ -10,6 +10,7 @@
             "miDebuggerPath": "/usr/bin/gdb-multiarch",
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Start QEMU Debug Server",
+            "postDebugTask": "Stop QEMU Debug Server",
             "setupCommands": [
                 {
                     "description": "Set disassembly flavor",

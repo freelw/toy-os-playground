@@ -37,9 +37,26 @@
             },
             "presentation": {
                 "echo": true,
-                "reveal": "always",
+                "reveal": "silent",
                 "focus": false,
                 "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": false,
+                "revealProblems": "never"
+            }
+        },
+        {
+            "label": "Stop QEMU Debug Server",
+            "type": "shell",
+            "command": "pkill -9 -f 'qemu-system-x86_64.*-s -S'",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
                 "showReuseMessage": false,
                 "clear": false
             }
