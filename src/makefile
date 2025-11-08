@@ -1,4 +1,4 @@
-all: link liblansys
+all: link liblansys bins
 	dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
 	dd if=lan_os of=a.img bs=512 count=62 skip=8 seek=1 conv=notrunc
 	head -c 1474560 /dev/zero > a.vfd
@@ -21,9 +21,23 @@ liblansys:
 	$(MAKE) -C common/lib
 liblansys_clean:
 	$(MAKE) -C common/lib clean
+bins:
+	$(MAKE) -C bin/loop
+	$(MAKE) -C bin/ls
+	$(MAKE) -C bin/shell
+	$(MAKE) -C bin/test
+	$(MAKE) -C bin/loop/cp
+	$(MAKE) -C bin/ls/cp
+	$(MAKE) -C bin/shell/cp
+	$(MAKE) -C bin/test/cp
+bins_clean:
+	$(MAKE) -C bin/loop clean
+	$(MAKE) -C bin/ls clean
+	$(MAKE) -C bin/shell clean
+	$(MAKE) -C bin/test clean
 boot:
 	nasm -o boot.bin boot.s -l boot.lst
-clean: liblansys_clean
+clean: liblansys_clean bins_clean
 	rm lan_os lan_main.o sys_call.o \
 	intel_err_handle.o head.o sched.o fork.o \
 	mm.o print_str.o keyboard.o exit.o \
