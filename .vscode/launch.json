@@ -32,16 +32,16 @@
                 //     "text": "b *0x7c00",
                 //     "ignoreFailures": false
                 // },
-                {
-                    "description": "Set breakpoint at check_a20_valid",
-                    "text": "b *0x134d",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set breakpoint at lan_main",
-                    "text": "b *0x1390",
-                    "ignoreFailures": true
-                }
+                // {
+                //     "description": "Set breakpoint at check_a20_valid",
+                //     "text": "b *0x134d",
+                //     "ignoreFailures": true
+                // },
+                // {
+                //     "description": "Set breakpoint at lan_main",
+                //     "text": "b *0x1390",
+                //     "ignoreFailures": true
+                // }
             ],
             "stopAtEntry": false,
             "externalConsole": false,
