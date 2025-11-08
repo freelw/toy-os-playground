@@ -7,8 +7,7 @@ all: link
 link: head lan_main boot
 	ld -m elf_i386 -T n.lds -o lan_os \
 	 head.o lan_main.o sys_call.o intel_err_handle.o \
-	 sched.o fork.o mm.o print_str.o keyboard.o exit.o \
-	 ./common/lib/liblansys.a
+	 sched.o fork.o mm.o print_str.o keyboard.o exit.o
 head:
 	nasm -felf32 -o head.o head.s
 lan_main:
