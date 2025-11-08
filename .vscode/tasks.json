@@ -4,7 +4,20 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "./make_os.sh",
+            "command": "make",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make clean",
             "group": "build",
             "presentation": {
                 "reveal": "always",
