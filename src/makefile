@@ -16,7 +16,7 @@ lan_main:
 	fork.c mm.c print_str.c keyboard.c exit.c \
 	-Wno-incompatible-pointer-types \
 	-Wno-implicit-function-declaration \
-	 -Wno-int-conversion
+	-Wno-int-conversion
 boot:
 	nasm -o boot.bin boot.s -l boot.lst
 clean:
