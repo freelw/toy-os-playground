@@ -96,9 +96,11 @@ make -C src bins
     * 自动连接gdb
     * 需要手动连接vnc 密码为 0
 
-调试截图
+### 调试截图
+---
 ![调试截图](img/image.png)
-运行截图
+### 运行截图
+---
 ![运行截图](img/image1.png)
 
 
