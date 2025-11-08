@@ -1,4 +1,4 @@
-all: link
+all: link liblansys
 	dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
 	dd if=lan_os of=a.img bs=512 count=62 skip=8 seek=1 conv=notrunc
 	head -c 1474560 /dev/zero > a.vfd
@@ -17,12 +17,15 @@ lan_main:
 	-Wno-incompatible-pointer-types \
 	-Wno-implicit-function-declaration \
 	-Wno-int-conversion
+liblansys:
+	$(MAKE) -C common/lib
+liblansys_clean:
+	$(MAKE) -C common/lib clean
 boot:
 	nasm -o boot.bin boot.s -l boot.lst
-clean:
+clean: liblansys_clean
 	rm lan_os lan_main.o sys_call.o \
 	intel_err_handle.o head.o sched.o fork.o \
 	mm.o print_str.o keyboard.o exit.o \
-	boot.bin boot.lst a.img a.vfd \
-	./common/lib/liblansys.a
+	boot.bin boot.lst a.img a.vfd
 	
