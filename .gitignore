@@ -9,3 +9,12 @@ demos/common_header_demo/fs_patch_tool/package-lock.json
 **/*.img
 **/lan_os
 src/common/lib/liblansys.a
+src/root_fs/loop
+src/root_fs/ls
+src/root_fs/shell
+src/root_fs/test
+src/bin/loop/loop
+src/bin/ls/ls
+src/bin/shell/lan_sh
+src/bin/test/test
+**/test_elf
