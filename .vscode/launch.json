@@ -5,7 +5,7 @@
             "name": "Debug QEMU Bootloader (16-bit)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/bin/ls",
+            "program": "${workspaceFolder}/src/lan_os",
             "miDebuggerServerAddress": "",
             "miDebuggerPath": "/usr/bin/gdb-multiarch",
             "cwd": "${workspaceFolder}",
@@ -31,6 +31,11 @@
                     "description": "Set breakpoint at 0x7c00",
                     "text": "b *0x7c00",
                     "ignoreFailures": false
+                },
+                {
+                    "description": "Set breakpoint at check_a20_valid",
+                    "text": "b *0x134d",
+                    "ignoreFailures": true
                 }
             ],
             "stopAtEntry": false,

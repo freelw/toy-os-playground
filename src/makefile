@@ -65,7 +65,7 @@ all: link liblansys bins
 # ============================================================================
 
 link: $(OBJS) boot liblansys
-	$(LD) $(LDFLAGS) -o $(KERNEL) $(OBJS)
+	$(LD) $(LDFLAGS) -Map=$(KERNEL).map -o $(KERNEL) $(OBJS)
 
 # 汇编文件
 head.o: head.s
@@ -99,7 +99,7 @@ bins:
 # ============================================================================
 
 clean: liblansys_clean bins_clean root_fs_clean
-	-rm -f $(OBJS) $(KERNEL) $(BOOT) boot.lst $(IMG) $(VFD)
+	-rm -f $(OBJS) $(KERNEL) $(KERNEL).map $(BOOT) boot.lst $(IMG) $(VFD)
 
 liblansys_clean:
 	$(MAKE) -C $(LIB_DIR) clean
