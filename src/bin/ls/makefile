@@ -5,7 +5,7 @@ link: lan_main
 lan_main:
 	gcc -I../../common/header -m32 -g -fno-stack-protector -fno-pie -c lan_main.c 
 clean:
-	rm ls test_elf lan_main.o
+	-rm ls test_elf lan_main.o
 cp:
 	cp ls ../../root_fs/
 	

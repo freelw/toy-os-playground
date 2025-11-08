@@ -35,10 +35,15 @@ bins_clean:
 	$(MAKE) -C bin/ls clean
 	$(MAKE) -C bin/shell clean
 	$(MAKE) -C bin/test clean
+root_fs_clean:
+	-rm root_fs/loop
+	-rm root_fs/ls
+	-rm root_fs/lan_sh
+	-rm root_fs/test
 boot:
 	nasm -o boot.bin boot.s -l boot.lst
-clean: liblansys_clean bins_clean
-	rm lan_os lan_main.o sys_call.o \
+clean: liblansys_clean bins_clean root_fs_clean
+	-rm lan_os lan_main.o sys_call.o \
 	intel_err_handle.o head.o sched.o fork.o \
 	mm.o print_str.o keyboard.o exit.o \
 	boot.bin boot.lst a.img a.vfd
